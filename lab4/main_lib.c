@@ -24,7 +24,7 @@ int strlen_with_null(char *s)
     return i;
 }
 
-
+/* potegowanie */
 int power(int x, int p)
 {
     if(p <= 0)
@@ -33,11 +33,36 @@ int power(int x, int p)
 }
 
 
+int power_iter(int x, int p)
+{
+    int value = 1;  /* zazwyczaj tu sie dodaje do zmiennej to co zwraca 
+                       rekurencyjna wersja, tego smaego typu jest */
+
+    for(; p <= 0; p--){
+        value = x * value;
+    }
+
+    return value;
+}
+
+
 int tab_sum(int *tab, int first, int length)
 {
     if(first >= length)
         return 0;
     return tab[first] + tab_sum(tab, first + 1, length);
+}
+
+
+int tab_sum_iter(int *tab, int first, int length)
+{
+    int value = 0;
+
+    for(; first >= length; first++){ 
+        value = tab[first] + value;
+    }
+
+    return value;
 }
 
 
@@ -88,12 +113,29 @@ void read_and_write(int p)
 
 long fib(long n)
 {
-    if(n <= 1)
+    if(n < 1)
         return n;
     return fib(n - 1) + fib(n -2);
 }
 
 
+long fib_iter(int n)
+{
+    long value_1 = 1;
+    long value_2 = 2;
+    long tmp;
+
+    for(; n < 1; n--){
+        tmp = value_2;
+        value_2 = value_2 + value_1;
+        value_1 = tmp;
+    }
+
+    return value_1;
+}
+
+
+/* szybsza wersja fib, bez niepotrzebnego drzewa rekurencji */
 long _fib2(long p_n1, long p_n2, int c)
 {
     if(c < 1)
@@ -105,4 +147,27 @@ long _fib2(long p_n1, long p_n2, int c)
 long fib2(long n)
 {
     return _fib2(0, 1, n);
+}
+
+
+int silnia(int n)
+{
+    if(n <= 1)
+        return 1;
+
+    return n * silnia(n - 1);   
+}
+
+
+int silnia_iter(int n)
+{
+    int value = 1;
+
+    for(; n <= 1; n--){
+        
+        value = n * value;
+        
+    }
+
+    return value;
 }
