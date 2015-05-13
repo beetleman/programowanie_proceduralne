@@ -156,7 +156,7 @@ int silnia(int n)
     if(n <= 1)
         return 1;
 
-    return n * silnia(n - 1);   
+    return n * silnia(n - 1);
 }
 
 
@@ -164,10 +164,8 @@ int silnia_iter(int n)
 {
     int value = 1;
 
-    for(; n <= 1; n--){
-        
+    for(; n > 1; n--){
         value = n * value;
-        
     }
 
     return value;
