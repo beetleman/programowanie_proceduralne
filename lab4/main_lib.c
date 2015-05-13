@@ -3,6 +3,7 @@
 #include <string.h>
 
 
+/* zadanie 1 */
 void reverse(char s[])
 {
     int length = strlen(s);
@@ -17,6 +18,7 @@ void reverse(char s[])
 }
 
 
+/* zadanie 2 */
 int strlen_with_null(char *s)
 {
     int i;
@@ -24,7 +26,8 @@ int strlen_with_null(char *s)
     return i;
 }
 
-/* potegowanie */
+
+/* zadanie 3 */
 int power(int x, int p)
 {
     if(p <= 0)
@@ -46,6 +49,7 @@ int power_iter(int x, int p)
 }
 
 
+/* zadanie 4 */
 int tab_sum(int *tab, int first, int length)
 {
     if(first >= length)
@@ -66,6 +70,7 @@ int tab_sum_iter(int *tab, int first, int length)
 }
 
 
+/* zadanie 5 */
 /* przekombinowalem bo bez strcmp pisalem to */
 int search_string(char *s, char *t)
 {
@@ -92,6 +97,7 @@ int search_string(char *s, char *t)
 }
 
 
+/* zadanie 6 */
 char *clone(char *s)
 {
     char *clone_s;
@@ -101,6 +107,7 @@ char *clone(char *s)
 }
 
 
+/* zadanie 7 */
 long fib(long n)
 {
     if(n < 1)
@@ -125,7 +132,10 @@ long fib_iter(int n)
 }
 
 
-/* szybsza wersja fib, bez niepotrzebnego drzewa rekurencji */
+/* szybsza wersja fib, bez niepotrzebnego drzewa rekurencji 
+   nie bylo tego na zajeciach, zrealizoeane przy uzyciu 2 funkcji
+   poniewarz w C argumenty w funkcji nie maja domyslnych wrtosci
+ */
 long _fib2(long p_n1, long p_n2, int c)
 {
     if(c < 1)
@@ -140,6 +150,7 @@ long fib2(long n)
 }
 
 
+/* przyklad gratis by Wiola <3 */
 int silnia(int n)
 {
     if(n <= 1)
