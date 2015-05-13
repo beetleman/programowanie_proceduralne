@@ -41,7 +41,7 @@ int power_iter(int x, int p)
     int value = 1;  /* zazwyczaj tu sie dodaje do zmiennej to co zwraca 
                        rekurencyjna wersja, tego smaego typu jest */
 
-    for(; p <= 0; p--){
+    for(; p > 0; p--){
         value = x * value;
     }
 
@@ -62,7 +62,7 @@ int tab_sum_iter(int *tab, int first, int length)
 {
     int value = 0;
 
-    for(; first >= length; first++){ 
+    for(; first < length; first++){ 
         value = tab[first] + value;
     }
 
@@ -110,9 +110,9 @@ char *clone(char *s)
 /* zadanie 7 */
 long fib(long n)
 {
-    if(n < 1)
+    if(n <= 1)
         return n;
-    return fib(n - 1) + fib(n -2);
+    return fib(n - 1) + fib(n - 2);
 }
 
 
@@ -122,7 +122,7 @@ long fib_iter(int n)
     long value_2 = 2;
     long tmp;
 
-    for(; n < 1; n--){
+    for(; n > 2; n--){
         tmp = value_2;
         value_2 = value_2 + value_1;
         value_1 = tmp;
@@ -140,7 +140,7 @@ long _fib2(long p_n1, long p_n2, int c)
 {
     if(c < 1)
         return p_n1;
-    return _fib2(p_n2, p_n1 + p_n2, c -1);
+    return _fib2(p_n2, p_n1 + p_n2, c - 1);
 }
 
 
