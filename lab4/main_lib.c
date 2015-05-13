@@ -66,6 +66,7 @@ int tab_sum_iter(int *tab, int first, int length)
 }
 
 
+/* przekombinowalem bo bez strcmp pisalem to */
 int search_string(char *s, char *t)
 {
     int len_s = strlen(s);
@@ -97,17 +98,6 @@ char *clone(char *s)
     clone_s = (char *) calloc(strlen(s)*1, sizeof(char));
     strcpy(clone_s, s);
     return clone_s;
-}
-
-
-void read_and_write(int p)
-{
-    char str[100];
-
-    while (fgets(str, 100, stdin)){
-        if (strlen(str) > p)
-            printf("%s\n", str);
-    }
 }
 
 
