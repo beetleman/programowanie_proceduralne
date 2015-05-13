@@ -30,5 +30,8 @@ int main()
     printf("power(2, 3) = %d\n", power(2, 3));
     printf("power_iter(2, 3) = %d\n", power_iter(2, 3));
 
+    printf("silnia(6) = %d\n", silnia(6));
+    printf("silnia_iter(6) = %d\n", silnia_iter(6));
+
     return 0;
 }
