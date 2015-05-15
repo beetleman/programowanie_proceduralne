@@ -7,21 +7,18 @@
 void read_and_print(char *file_name)
 {
     FILE *fp;
-    char * line = NULL;
-    size_t len = 0;
+    char buf[BUFFER_SIZE];
     int counter = 1;
 
-    fp = fopen(file_name, "r");;
+    fp = fopen(file_name, "r");
     if (fp == NULL)
         exit(EXIT_FAILURE);
 
-    while (getline(&line, &len, fp) != -1) {
-        printf("%4.d | %s", counter++, line);
+    while (fgets(buf, BUFFER_SIZE, fp)) {
+        printf("%4.d | %s", counter++, buf);
     }
 
     fclose(fp);
-    if (line)
-        free(line);
 }
 
 
@@ -32,7 +29,7 @@ int count_chars(char *file_name)
     FILE *fp;
     char buf[BUFFER_SIZE];
 
-    fp = fopen(file_name, "r");;
+    fp = fopen(file_name, "r");
     if (fp == NULL)
         exit(EXIT_FAILURE);
 
