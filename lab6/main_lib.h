@@ -19,4 +19,3 @@ void binary_copy(char *file_in, char *file_out, int buffer_size);
 void read_and_write_3(char *file_in, char *file_out);
 
 #endif /* _MAIN_LIB_H_ */
-
