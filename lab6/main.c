@@ -5,7 +5,7 @@
 int main(int argc, char *args[])
 {
     /* zad1 */
-    /* read_and_print(filename); */
+    read_and_print("./main.c");
 
     /* zad2 */
     /* printf("ilosc znakow: %d\n", count_chars(filename)); */

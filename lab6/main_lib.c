@@ -6,7 +6,24 @@
 /* zad1 */
 void read_and_print(char *file_name)
 {
-    
+    FILE *fp;
+    char * line = NULL;
+    size_t len = 0;
+    int counter = 1;
+
+    fp = fopen(file_name, "r");;
+    if (fp == NULL)
+        exit(EXIT_FAILURE);
+
+    while (getline(&line, &len, fp) != -1) {
+        printf("%4.d | %s", counter++, line);
+    }
+
+    fclose(fp);
+    if (line)
+        free(line);
+    exit(EXIT_SUCCESS);
+    fclose(fp);
 }
 
 
