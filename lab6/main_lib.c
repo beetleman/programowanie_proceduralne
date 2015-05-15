@@ -22,8 +22,6 @@ void read_and_print(char *file_name)
     fclose(fp);
     if (line)
         free(line);
-    exit(EXIT_SUCCESS);
-    fclose(fp);
 }
 
 
@@ -31,6 +29,18 @@ void read_and_print(char *file_name)
 int count_chars(char *file_name)
 {
     int result = 0;
+    FILE *fp;
+    char buf[2];
+
+    fp = fopen(file_name, "r");;
+    if (fp == NULL)
+        exit(EXIT_FAILURE);
+
+    while (fgets(buf, 2, fp)) {
+        result++;
+    }
+
+    fclose(fp);
 
     return result;
 }

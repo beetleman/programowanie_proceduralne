@@ -8,7 +8,7 @@ int main(int argc, char *args[])
     read_and_print("./main.c");
 
     /* zad2 */
-    /* printf("ilosc znakow: %d\n", count_chars(filename)); */
+    printf("ilosc znakow: %d\n", count_chars("./main.c"));
 
     /* zad3 */
     /* compare_files(filename1, filename2); */
