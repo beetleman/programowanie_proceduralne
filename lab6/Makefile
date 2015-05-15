@@ -10,4 +10,4 @@ timer_lib.o:
 main: clean main_lib.o timer_lib.o
 	$(CC) $(CFLAGS) $(LDFLAGS) main_lib.o timer_lib.o main.c -o main
 test: main
-	./main
+	./main; make clean
