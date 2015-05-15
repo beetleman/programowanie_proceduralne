@@ -2,7 +2,7 @@ CFLAGS = -Wall -ansi # tutaj można dodawać inne flagi kompilatora
 LDFLAGS = -lm
 
 clean:
-	rm -rf *.o main
+	rm -rf *.o main test_file_2.txt
 main_lib.o:
 	$(CC) $(CFLAGS) $(LDFLAGS) -o main_lib.o -c main_lib.c
 timer_lib.o:

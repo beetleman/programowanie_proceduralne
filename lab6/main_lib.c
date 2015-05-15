@@ -88,7 +88,33 @@ void compare_files(char *file_in1, char *file_in2)
 /* zad4 */
 void binary_copy(char *file_in, char *file_out, int buffer_size)
 {
-    
+    FILE *fp_in;
+    FILE *fp_out;
+    char buf[buffer_size];
+
+    fp_in = fopen(file_in, "rb");
+    if (fp_in == NULL) {
+        printf("Error: %s", file_in);
+        return;
+    }
+
+    fp_out = fopen(file_out, "wb");
+    if (fp_out == NULL) {
+        fclose(fp_out);
+        printf("Error: %s", file_out);
+        return;
+    }
+
+    while (!feof(fp_in) && !ferror(fp_out)){
+        fwrite(
+            buf,
+            1,
+            fread(buf, 1, buffer_size, fp_in),
+            fp_out);
+    }
+
+    fclose(fp_in);
+    fclose(fp_out);
 }
 
 /* zad5 */
