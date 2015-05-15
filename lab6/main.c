@@ -11,7 +11,8 @@ int main(int argc, char *args[])
     printf("ilosc znakow: %d\n", count_chars("./main.c"));
 
     /* zad3 */
-    /* compare_files(filename1, filename2); */
+    compare_files("./main.c", "./main.c");
+    compare_files("./main.c", "./main_lib.h");
 
     /* zad4 */
     /* binary_copy(infile, outfile, buffer_size); */
