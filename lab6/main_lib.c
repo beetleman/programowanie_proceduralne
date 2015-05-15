@@ -30,14 +30,14 @@ int count_chars(char *file_name)
 {
     int result = 0;
     FILE *fp;
-    char buf[2];
+    char buf[BUFFER_SIZE];
 
     fp = fopen(file_name, "r");;
     if (fp == NULL)
         exit(EXIT_FAILURE);
 
-    while (fgets(buf, 2, fp)) {
-        result++;
+    while (fgets(buf, BUFFER_SIZE, fp)) {
+        result += strlen(buf);
     }
 
     fclose(fp);
