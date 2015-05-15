@@ -12,7 +12,7 @@ void read_and_print(char *file_name)
 
     fp = fopen(file_name, "r");
     if (fp == NULL) {
-        printf("Error: %s", file_name);
+        printf("\nError: %s\n", file_name);
         return;
     }
 
@@ -33,7 +33,7 @@ int count_chars(char *file_name)
 
     fp = fopen(file_name, "r");
     if (fp == NULL) {
-        printf("Error: %s", file_name);
+        printf("\nError: %s\n", file_name);
         return -1;
     }
 
@@ -59,14 +59,14 @@ void compare_files(char *file_in1, char *file_in2)
 
     fp_1 = fopen(file_in1, "r");
     if (fp_1 == NULL) {
-        printf("Error: %s", file_in1);
+        printf("\nError: %s\n", file_in1);
         return;
     }
 
     fp_2 = fopen(file_in2, "r");
     if (fp_2 == NULL) {
         fclose(fp_1);
-        printf("Error: %s", file_in2);
+        printf("\nError: %s\n", file_in2);
         return;
     }
 
@@ -94,14 +94,14 @@ void binary_copy(char *file_in, char *file_out, int buffer_size)
 
     fp_in = fopen(file_in, "rb");
     if (fp_in == NULL) {
-        printf("Error: %s", file_in);
+        printf("\nError: %s\n", file_in);
         return;
     }
 
     fp_out = fopen(file_out, "wb");
     if (fp_out == NULL) {
         fclose(fp_out);
-        printf("Error: %s", file_out);
+        printf("\nError: %s\n", file_out);
         return;
     }
 
@@ -120,6 +120,31 @@ void binary_copy(char *file_in, char *file_out, int buffer_size)
 /* zad5 */
 void read_and_write_3(char *file_in, char *file_out)
 {
-    
+    FILE *fp_in;
+    FILE *fp_out;
+    int file_size;
+    char buf[5];
+
+    fp_in = fopen(file_in, "rb");
+    if (fp_in == NULL) {
+        printf("\nError: %s\n", file_in);
+        return;
+    }
+
+    fp_out = fopen(file_out, "wb");
+    if (fp_out == NULL) {
+        fclose(fp_out);
+        printf("\nError: %s\n", file_out);
+        return;
+    }
+
+    fseek(fp_in, 0, SEEK_END);
+    file_size = ftell(fp_in);
+    fseek(fp_in, 0, SEEK_SET);
+
+    /* TODO: Dokonczyc tutaj zadanie */
+
+    fclose(fp_in);
+    fclose(fp_out);
 }
 

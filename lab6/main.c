@@ -19,7 +19,7 @@ int main(int argc, char *args[])
     compare_files("./test_file.txt", "./test_file_2.txt");
 
     /* zad5 */
-    /* read_and_write_3(infile, outfile); */
+    read_and_write_3("./test_file.txt", "./test_file_3.txt");
 
     return 0;
 }
