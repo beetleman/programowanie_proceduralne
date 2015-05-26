@@ -16,7 +16,8 @@ struct point {
 void zabawa_z_struct(struct point ** points);
 
 /* zad3 */
-
+void print_str(char * str);
+void print_str_func();
 
 /* zad4 */
 
